@@ -3,54 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kar Beta Scroll</title>
+    <title>Ujjwal Bhai - Colour Trading Tips</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        body, html {
+        /* Basic Reset */
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        #container {
-            width: 100%;
+        body {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
             padding: 20px;
-            height: 2vw;
-            font-size: 2vw;
         }
 
-        .box {
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin-bottom: 20px;
+        header h1 {
+            font-size: 2.5rem;
+            color: #FFD700;
+            opacity: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0;
+        }
+
+        .hero {
+            margin-top: 20px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            border-radius: 50%;
+            margin-top: 20px;
+            opacity: 0;
+        }
+
+        .features {
+            list-style: none;
+            margin-top: 20px;
+            opacity: 0;
+        }
+
+        .features li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #FFD700;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #FFD700;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        .btn:hover {
+            background-color: #ffcc00;
+        }
+
+        .winning-section {
+            margin-top: 40px;
+            opacity: 0;
+        }
+
+        .winning-img {
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 1rem;
+            opacity: 0;
         }
     </style>
 </head>
 <body>
-    <div id="container">
-    
-    </div>
+    <header>
+        <h1>UJJWAL BHAI</h1>
+        <p>India's Most Popular Colour Trading Tipper</p>
+    </header>
+
+    <section class="hero">
+        <img src="ujjwal-bhai.jpg" alt="Ujjwal Bhai" class="profile-pic">
+        <ul class="features">
+            <li><span>✔</span> 99% Accurate Tips</li>
+            <li><span>✔</span> 10 Lakh+ Winnings</li>
+            <li><span>✔</span> Accurate Number Sureshot</li>
+        </ul>
+        <a href="https://t.me/yourchannel" class="btn">Join Telegram Now</a>
+    </section>
+
+    <section class="winning-section">
+        <img src="winning-proof.jpg" alt="Winning Proof" class="winning-img">
+        <p>Join Now And Start Winning Big With Ujjwal Bhai</p>
+    </section>
+
+    <footer>
+        <p>Powered by <a href="#">Systeme.io</a></p>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('container');
-            function createBox() {
-                const box = document.createElement('div');
-                box.className = 'box';
-                box.textContent = 'Kar beta scroll jitna man ho tera';
-                return box;
-            }
-            function addBoxes() {
-                for (let i = 0; i < 99; i++) {
-                    container.appendChild(createBox());
-                }
-            }
-            addBoxes();
-            window.addEventListener('scroll', function() {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    addBoxes();
-                }
-            });
-        });
+        gsap.from("header h1", { duration: 1, opacity: 0, y: -20, ease: "power2.out" });
+        gsap.from("header p", { duration: 1, opacity: 0, y: 20, delay: 0.3, ease: "power2.out" });
+        gsap.from(".profile-pic", { duration: 1, opacity: 0, scale: 0.8, delay: 0.5, ease: "elastic.out(1, 0.5)" });
+        gsap.from(".features li", { duration: 1, opacity: 0, x: -50, stagger: 0.3, delay: 0.8 });
+        gsap.from(".btn", { duration: 1, opacity: 0, scale: 0.8, delay: 1, ease: "elastic.out(1, 0.5)" });
+        gsap.from(".winning-section", { duration: 1, opacity: 0, y: 50, delay: 1.2 });
+        gsap.from("footer", { duration: 1, opacity: 0, y: 30, delay: 1.5 });
     </script>
 </body>
 </html>
